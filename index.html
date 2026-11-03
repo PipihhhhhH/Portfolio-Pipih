@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio Pipih Apipah Nurwati, lulusan Informatika dengan pengalaman di bidang technical writing, dokumentasi IT, administrasi proyek, dan pengujian aplikasi.">
+  <title>Pipih Apipah Nurwati | Portfolio</title>
+
+  <style>
+    :root {
+      --background: #f7f8fa;
+      --surface: #ffffff;
+      --text: #202938;
+      --muted: #657184;
+      --accent: #176b63;
+      --accent-light: #e8f3f1;
+      --border: #e3e8ee;
+      --shadow: 0 8px 24px rgba(24, 39, 56, 0.05);
+      --radius: 16px;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 16px/1.7 Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 1000px);
+      margin-inline: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding-block: 14px;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 36px;
+      padding-block: 76px 48px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 16px 0 12px;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .initials {
+      display: grid;
+      width: 148px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid #c8ded9;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 46px;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 18px;
+      border: 1px solid var(--accent);
+      border-radius: 9px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .button.primary,
+    .button:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .highlight,
+    .card,
+    .document-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight {
+      padding: 18px 12px;
+      text-align: center;
+    }
+
+    .highlight strong {
+      display: block;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding-block: 44px;
+    }
+
+    .section-heading {
+      margin: 0 0 5px;
+      font-size: 27px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      margin: 0 0 22px;
+      color: var(--muted);
+    }
+
+    .about-copy {
+      max-width: 850px;
+      margin: 0;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card,
+    .document-card {
+      padding: 22px;
+    }
+
+    .card-icon {
+      margin-bottom: 8px;
+      font-size: 23px;
+    }
+
+    .card h3,
+    .document-card h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+    }
+
+    .card p,
+    .document-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tools-title {
+      margin: 28px 0 12px;
+      font-size: 17px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .chip {
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .document-card ol {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .timeline {
+      margin-left: 7px;
+      padding-left: 24px;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 7px;
+      left: -31px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-item h3 {
+      margin: 3px 0 0;
+      font-size: 18px;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-item ul {
+      margin: 9px 0 0;
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-panel {
+      padding: 38px 24px;
+      border-radius: 20px;
+      background: var(--accent);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .contact-panel h2 {
+      margin: 0 0 8px;
+      font-size: 27px;
+    }
+
+    .contact-panel p {
+      margin: 0 0 20px;
+      opacity: 0.92;
+    }
+
+    .contact-panel .button {
+      margin: 4px;
+      border-color: #ffffff;
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    .location {
+      margin-top: 16px !important;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding-top: 48px;
+      }
+
+      .initials {
+        grid-row: 1;
+        width: 105px;
+        font-size: 34px;
+      }
+
+      .highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" aria-label="Navigasi utama">
+    <div class="container nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#dokumen">Dokumen</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero" id="tentang">
+      <div>
+        <span class="eyebrow">Terbuka untuk peluang baru</span>
+        <h1>Pipih Apipah Nurwati</h1>
+        <p class="hero-description">
+          Technical Writer &amp; IT Documentation Specialist. Saya membantu
+          menyusun kebutuhan, alur sistem, dan informasi teknis menjadi
+          dokumentasi yang jelas, terstruktur, dan mudah dipahami.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="mailto:Apipahn.pipih@gmail.com">Hubungi Saya</a>
+          <a class="button" href="https://linkedin.com/in/pipih-apipah-nurwati-2389a6268/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="initials" aria-label="Inisial Pipih Apipah Nurwati">PN</div>
+    </header>
+
+    <div class="highlights" aria-label="Ringkasan profil">
+      <div class="highlight">
+        <strong>FSD &amp; TSD</strong>
+        <span>Dokumentasi spesifikasi sistem</span>
+      </div>
+      <div class="highlight">
+        <strong>IT</strong>
+        <span>Dokumentasi dan pengujian aplikasi</span>
+      </div>
+      <div class="highlight">
+        <strong>S1</strong>
+        <span>Informatika, UNIBI Bandung</span>
+      </div>
+      <div class="highlight">
+        <strong>Laravel</strong>
+        <span>Pengembangan aplikasi web</span>
+      </div>
+    </div>
+
+    <section aria-labelledby="about-heading">
+      <h2 class="section-heading" id="about-heading">Tentang Saya</h2>
+      <p class="section-subtitle">
+        Lulusan Informatika dengan pengalaman di bidang dokumentasi IT,
+        administrasi proyek, dan pengujian aplikasi.
+      </p>
+      <p class="about-copy">
+        Saya memiliki ketertarikan pada dokumentasi sistem dan pengembangan
+        aplikasi. Latar belakang Informatika membantu saya memahami alur
+        sistem, basis data, serta proses pengembangan web. Melalui pengalaman
+        kerja, saya terbiasa berkoordinasi dengan pengguna, mengumpulkan
+        kebutuhan, mengelola dokumentasi, dan menyusun laporan secara
+        terstruktur.
+      </p>
+    </section>
+
+    <section id="keahlian">
+      <h2 class="section-heading">Keahlian</h2>
+      <p class="section-subtitle">Kemampuan yang relevan dengan pekerjaan dan proyek saya.</p>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📝</div>
+          <h3>Technical Writing</h3>
+          <p>Menyusun manual pengguna, dokumentasi aplikasi, dan dokumentasi fitur dengan bahasa yang runtut dan mudah dipahami.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🧩</div>
+          <h3>System Requirements</h3>
+          <p>Mengumpulkan kebutuhan pengguna, menyusun FSD dan TSD, serta mendokumentasikan kebutuhan dan alur sistem.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🔍</div>
+          <h3>Application Testing</h3>
+          <p>Melakukan pengujian fungsi aplikasi, mencatat temuan, dan menyusun laporan hasil pengujian.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📐</div>
+          <h3>Pemodelan Sistem</h3>
+          <p>Menggunakan Flowchart, UML, dan ERD untuk menggambarkan alur proses serta struktur data.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📊</div>
+          <h3>Administrasi &amp; Pelaporan</h3>
+          <p>Mengelola dokumentasi proyek dan menyusun laporan progres mingguan maupun bulanan.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">✅</div>
+          <h3>Ketelitian Dokumentasi</h3>
+          <p>Memeriksa kelengkapan informasi, konsistensi istilah, dan kerapian dokumen sebelum diserahkan.</p>
+        </article>
+      </div>
+
+      <h3 class="tools-title">Tools &amp; Teknologi</h3>
+      <div class="chips">
+        <span class="chip">Microsoft Word</span>
+        <span class="chip">Microsoft Excel</span>
+        <span class="chip">PowerPoint</span>
+        <span class="chip">Microsoft Visio</span>
+        <span class="chip">Draw.io</span>
+        <span class="chip">Google Docs</span>
+        <span class="chip">Google Sheets</span>
+        <span class="chip">Google Slides</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Laravel</span>
+      </div>
+    </section>
+
+    <section id="dokumen">
+      <h2 class="section-heading">Jenis Dokumentasi</h2>
+      <p class="section-subtitle">
+        Contoh struktur dokumen yang relevan dengan bidang technical writing.
+      </p>
+
+      <div class="card-grid">
+        <article class="document-card">
+          <h3>Functional Specification Document (FSD)</h3>
+          <ol>
+            <li>Tujuan dan ruang lingkup</li>
+            <li>Kebutuhan bisnis</li>
+            <li>Fitur dan alur pengguna</li>
+            <li>Aturan bisnis</li>
+            <li>Kriteria penerimaan</li>
+          </ol>
+        </article>
+
+        <article class="document-card">
+          <h3>Technical Specification Document (TSD)</h3>
+          <ol>
+            <li>Gambaran teknis sistem</li>
+            <li>Desain basis data (ERD)</li>
+            <li>Modul dan alur proses</li>
+            <li>Antarmuka dan integrasi</li>
+            <li>Catatan teknis</li>
+          </ol>
+        </article>
+
+        <article class="document-card">
+          <h3>Manual Pengguna</h3>
+          <ol>
+            <li>Pengenalan aplikasi</li>
+            <li>Panduan penggunaan langkah demi langkah</li>
+            <li>Tangkapan layar pendukung</li>
+            <li>Penanganan kendala umum</li>
+          </ol>
+        </article>
+
+        <article class="document-card">
+          <h3>Laporan Pengujian &amp; Progres</h3>
+          <ol>
+            <li>Skenario pengujian</li>
+            <li>Hasil dan temuan pengujian</li>
+            <li>Status tindak lanjut</li>
+            <li>Ringkasan progres proyek</li>
+          </ol>
+        </article>
+      </div>
+
+      <p class="note">
+        Bagian ini menjelaskan jenis dan struktur dokumentasi. Tambahkan contoh
+        dokumen atau hasil pekerjaan yang telah disamarkan sebelum dipublikasikan.
+      </p>
+    </section>
+
+    <section id="pengalaman">
+      <h2 class="section-heading">Pengalaman</h2>
+      <p class="section-subtitle">Pengalaman kerja dan proyek yang pernah saya jalani.</p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date">MEI 2025 – AGUSTUS 2025</div>
+          <h3>Quality Control</h3>
+          <div class="timeline-company">PT. Kaldu Sari Nabati · Majalengka</div>
+          <ul>
+            <li>Memeriksa kualitas produk dan kemasan sesuai standar.</li>
+            <li>Memantau proses produksi serta mengidentifikasi produk rusak atau tidak sesuai.</li>
+            <li>Menyusun laporan kualitas produksi dan dokumentasi hasil inspeksi.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">JANUARI 2024 – JUNI 2024</div>
+          <h3>Administrative Staff</h3>
+          <div class="timeline-company">CV. Media Indo Teknologi · Bandung</div>
+          <ul>
+            <li>Berkoordinasi dengan pengguna untuk memperjelas kebutuhan proyek aplikasi.</li>
+            <li>Mengelola kebutuhan pengembangan dan dokumentasi proyek.</li>
+            <li>Menyusun laporan progres mingguan dan bulanan.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">JULI 2022 – DESEMBER 2023</div>
+          <h3>Technical Writer</h3>
+          <div class="timeline-company">CV. Media Indo Teknologi · Bandung</div>
+          <ul>
+            <li>Membuat dan memelihara manual pengguna serta dokumentasi teknis aplikasi.</li>
+            <li>Menyusun Functional Specification Document (FSD) dan Technical Specification Document (TSD).</li>
+            <li>Mendokumentasikan fitur aplikasi, kebutuhan bisnis, dan alur kerja sistem.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">MARET 2022 – APRIL 2022</div>
+          <h3>Application Tester</h3>
+          <div class="timeline-company">Proyek Helpdesk · DISKOMINFO Kabupaten Bandung</div>
+          <ul>
+            <li>Membantu memperjelas kebutuhan dan spesifikasi aplikasi bersama pengguna.</li>
+            <li>Melakukan pengujian fungsi aplikasi dan mencatat hasil pengujian.</li>
+            <li>Menyusun laporan hasil pengujian proyek.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyek">
+      <h2 class="section-heading">Pendidikan &amp; Proyek Akademik</h2>
+      <p class="section-subtitle">
+        Universitas Informatika dan Bisnis Indonesia (UNIBI), Bandung ·
+        Sarjana Informatika · 2026
+      </p>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🛒</div>
+          <h3>Aplikasi E-Commerce Berbasis Web</h3>
+          <p>
+            Mengembangkan aplikasi e-commerce menggunakan Laravel sebagai
+            proyek tugas akhir, dengan fitur pengelolaan produk, keranjang
+            belanja, pemesanan, dan pembayaran.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📄</div>
+          <h3>Dokumentasi &amp; Presentasi Akademik</h3>
+          <p>
+            Menyusun laporan, dokumentasi proyek, diagram sistem, dan materi
+            presentasi untuk menjelaskan proses serta hasil pengembangan aplikasi.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="contact-panel">
+        <h2>Mari Terhubung</h2>
+        <p>Saya terbuka untuk peluang kerja dan kolaborasi yang relevan.</p>
+        <a class="button" href="mailto:Apipahn.pipih@gmail.com">Email</a>
+        <a class="button" href="https://wa.me/6285136287366" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="button" href="https://linkedin.com/in/pipih-apipah-nurwati-2389a6268/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <p class="location">Bandung, Indonesia</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Pipih Apipah Nurwati · Portfolio
+  </footer>
+</body>
+</html>
